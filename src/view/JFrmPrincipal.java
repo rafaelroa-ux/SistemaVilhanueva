@@ -4,6 +4,8 @@
  */
 package view;
 
+import java.time.Clock;
+
 /**
  *
  * @author u07785254141
@@ -15,6 +17,8 @@ public class JFrmPrincipal extends javax.swing.JFrame {
      */
     public JFrmPrincipal() {
         initComponents();
+        setTitle("Sistema do ifms");
+        setExtendedState(MAXIMIZED_BOTH);
     }
 
     /**
@@ -26,7 +30,75 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMnuCadastros = new javax.swing.JMenu();
+        jMnuUsuarios = new javax.swing.JCheckBoxMenuItem();
+        jMnuClientes = new javax.swing.JCheckBoxMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMnuSair = new javax.swing.JCheckBoxMenuItem();
+        jMnuMovimento = new javax.swing.JMenu();
+        jMnuVendas = new javax.swing.JCheckBoxMenuItem();
+        jMnuCompras = new javax.swing.JCheckBoxMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMnuCadastros.setMnemonic('c');
+        jMnuCadastros.setText("Cadastro");
+        jMnuCadastros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuCadastrosActionPerformed(evt);
+            }
+        });
+
+        jMnuUsuarios.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_U, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuUsuarios.setMnemonic('u');
+        jMnuUsuarios.setSelected(true);
+        jMnuUsuarios.setText("Usuarios");
+        jMnuUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/usuario.png"))); // NOI18N
+        jMnuUsuarios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuUsuariosActionPerformed(evt);
+            }
+        });
+        jMnuCadastros.add(jMnuUsuarios);
+
+        jMnuClientes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_C, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuClientes.setSelected(true);
+        jMnuClientes.setText("Cliente");
+        jMnuClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/cliente.png"))); // NOI18N
+        jMnuCadastros.add(jMnuClientes);
+        jMnuCadastros.add(jSeparator1);
+
+        jMnuSair.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuSair.setMnemonic('s');
+        jMnuSair.setSelected(true);
+        jMnuSair.setText("Sair");
+        jMnuSair.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/exit.png"))); // NOI18N
+        jMnuSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMnuSairActionPerformed(evt);
+            }
+        });
+        jMnuCadastros.add(jMnuSair);
+
+        jMenuBar1.add(jMnuCadastros);
+
+        jMnuMovimento.setMnemonic('m');
+        jMnuMovimento.setText("Movimento");
+
+        jMnuVendas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuVendas.setSelected(true);
+        jMnuVendas.setText("Vendas");
+        jMnuMovimento.add(jMnuVendas);
+
+        jMnuCompras.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        jMnuCompras.setSelected(true);
+        jMnuCompras.setText("Compras");
+        jMnuMovimento.add(jMnuCompras);
+
+        jMenuBar1.add(jMnuMovimento);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -36,11 +108,25 @@ public class JFrmPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMnuUsuariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuUsuariosActionPerformed
+        // TODO add your handling code here:
+      JDlgMpvUsuarios jDlgMpvUsuarios = new JDlgMpvUsuarios(null, true);
+      jDlgMpvUsuarios.setVisible(true);  
+    }//GEN-LAST:event_jMnuUsuariosActionPerformed
+
+    private void jMnuSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuSairActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMnuSairActionPerformed
+
+    private void jMnuCadastrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMnuCadastrosActionPerformed
+              // TODO add your handling code here:
+    }//GEN-LAST:event_jMnuCadastrosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +164,14 @@ public class JFrmPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu jMnuCadastros;
+    private javax.swing.JCheckBoxMenuItem jMnuClientes;
+    private javax.swing.JCheckBoxMenuItem jMnuCompras;
+    private javax.swing.JMenu jMnuMovimento;
+    private javax.swing.JCheckBoxMenuItem jMnuSair;
+    private javax.swing.JCheckBoxMenuItem jMnuUsuarios;
+    private javax.swing.JCheckBoxMenuItem jMnuVendas;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }
